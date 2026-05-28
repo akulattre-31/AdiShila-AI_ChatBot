@@ -302,7 +302,7 @@ Keep answers concise, polite, and deeply spiritual but accurate regarding produc
 
     window.onload = async () => {
         try {
-            const res = await fetch(`http://127.0.0.1:8000/api/chat/history?session_token=${SESSION_TOKEN}`);
+            const res = await fetch(`https://adishila-ai-backend.onrender.com/api/chat/history?session_token=${SESSION_TOKEN}`);
             if (res.ok) {
                 const history = await res.json();
                 // Clear default greeting if history exists to avoid duplication
@@ -374,7 +374,7 @@ Keep answers concise, polite, and deeply spiritual but accurate regarding produc
         sendBtn.disabled = true;
 
         try {
-            const endpoint = `http://127.0.0.1:8000/api/chat`;
+            const endpoint = `https://adishila-ai-backend.onrender.com/api/chat`;
             
             const payload = {
                 "message": text,
