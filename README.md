@@ -1,4 +1,5 @@
-# AdiShila AI - TaskPilot
+# AdiShilaChatBot
+
 
 AdiShila AI TaskPilot is an enterprise-grade AI chatbot application powered by Google's **Gemini 2.5 Flash** model. It features a responsive web frontend and a robust Python FastAPI backend, designed for low-latency streaming and persistent memory.
 
