@@ -53,9 +53,9 @@ $Payload = @{
         startCommand = "cd backend && uvicorn main:app --host 0.0.0.0 --port `$PORT"
         envVars = @(
             @{ key = "PYTHON_VERSION"; value = "3.11.0" },
-            @{ key = "GEMINI_API_KEY"; value = "AIzaSyCqZD37xm5qgOmLFb-Pjpe7ECihw24nRzU" },
-            @{ key = "DATABASE_URL"; value = "postgresql://neondb_owner:npg_Br1YmflWUos4@ep-icy-rice-apwshra8-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require" },
-            @{ key = "JWT_SECRET_KEY"; value = "super-secret-enterprise-key" }
+            @{ key = "GEMINI_API_KEY"; value = "<YOUR_GEMINI_API_KEY>" },
+            @{ key = "DATABASE_URL"; value = "<YOUR_NEON_DB_URL>" },
+            @{ key = "JWT_SECRET_KEY"; value = "<YOUR_JWT_SECRET>" }
         )
     }
 }
