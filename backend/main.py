@@ -21,11 +21,24 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "dummy_for_testing")
 JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "super-secret-enterprise-key")
 JWT_ALGORITHM = "HS256"
 
+import asyncio
+
 app = FastAPI(title="Secure AI Chat API", version="1.0.0")
 
+async def keep_awake():
+    """Pings the server every 5 minutes to prevent Render from sleeping."""
+    while True:
+        try:
+            async with httpx.AsyncClient() as client:
+                await client.get("https://adishila-ai-backend.onrender.com/docs", timeout=10.0)
+        except Exception:
+            pass
+        await asyncio.sleep(300) # Sleep for 5 minutes
+
 @app.on_event("startup")
-def on_startup():
+async def on_startup():
     init_db()
+    asyncio.create_task(keep_awake())
 
 # ---------------------------------------------------------
 # SECURITY: Strict CORS Policy
