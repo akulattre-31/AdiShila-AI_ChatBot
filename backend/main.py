@@ -143,7 +143,7 @@ async def chat_endpoint(
             async with httpx.AsyncClient() as client:
                 async with client.stream(
                     "POST",
-                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key={GEMINI_API_KEY}",
+                    f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key={GEMINI_API_KEY}",
                     json=payload,
                     timeout=20.0
                 ) as resp:
